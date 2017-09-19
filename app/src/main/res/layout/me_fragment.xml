@@ -4,37 +4,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/logon"
         android:layout_width="match_parent"
         android:layout_height="190dp"
+        android:orientation="vertical"
         android:background="@color/red">
 
         <ImageView
             android:id="@+id/log"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             android:src="@drawable/ic_default_user_head" />
+        <ImageView
+            android:id="@+id/userImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:visibility="gone"/>
 
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/log"
-            android:layout_centerHorizontal="true"
+            android:layout_below="@id/userImg"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:textColor="@color/white"
             android:text="点击登录" />
 
-    </RelativeLayout>
+    </LinearLayout>
     <!-- 商品收藏 goods  店铺收藏store 我的足迹footprint-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:padding="5dp"
         android:background="#c02a00">
 
         <TextView
@@ -43,11 +52,11 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_collection_store"
+            android:drawableTop="@drawable/ic_action_collection"
             android:gravity="center"
             android:text="商品收藏"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/store"
@@ -55,11 +64,11 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:drawableTop="@drawable/ic_action_collection"
+            android:drawableTop="@drawable/ic_collection_store"
             android:gravity="center"
             android:text="店铺收藏"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/footprint"
@@ -81,7 +90,7 @@
     <TextView
         android:id="@+id/all_orders"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:text="全部订单"
         android:textSize="18dp"
         android:gravity="center_vertical"
@@ -98,7 +107,7 @@
     <!--obligation待付款  drop_shipping待发货  wait待收货 待评价appraise drawback退款/货-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:orientation="horizontal"
         android:padding="8dp">
         <TextView
@@ -110,7 +119,7 @@
             android:drawableTop="@drawable/ic_user_order_wait_pay"
             android:gravity="center"
             android:text="未付款"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/drop_shipping"
@@ -121,7 +130,7 @@
             android:drawableTop="@drawable/ic_user_order_wait_drive"
             android:gravity="center"
             android:text="待发货"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/wait"
@@ -132,7 +141,7 @@
             android:drawableTop="@drawable/ic_user_order_wait_receipt"
             android:gravity="center"
             android:text="待收货"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
         <TextView
             android:id="@+id/appraise"
             android:layout_width="0dp"
@@ -142,7 +151,7 @@
             android:drawableTop="@drawable/ic_user_order_wait_comment"
             android:gravity="center"
             android:text="待评价"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
         <TextView
             android:id="@+id/drawback"
             android:layout_width="0dp"
@@ -152,7 +161,7 @@
             android:drawableTop="@drawable/ic_user_order_wait_refund"
             android:gravity="center"
             android:text="退款/货"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -168,7 +177,7 @@
     <TextView
         android:id="@+id/my_pleasure"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:text="我的财产"
         android:textSize="18dp"
         android:gravity="center_vertical"
@@ -185,7 +194,7 @@
     <!-- 预存款prepaid_deposit  充值卡refill_card  代金券voucher 待评价appraise drawback退款/货-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:orientation="horizontal"
         android:padding="8dp">
         <TextView
@@ -197,7 +206,7 @@
             android:drawableTop="@drawable/ic_user_property_money"
             android:gravity="center"
             android:text="预存款"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/refill_card"
@@ -208,7 +217,7 @@
             android:drawableTop="@drawable/ic_user_property_card"
             android:gravity="center"
             android:text="充值卡"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/voucher"
@@ -219,7 +228,7 @@
             android:drawableTop="@drawable/ic_user_property_vouchers"
             android:gravity="center"
             android:text="代金券"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
         <TextView
             android:id="@+id/red_packet"
             android:layout_width="0dp"
@@ -229,7 +238,7 @@
             android:drawableTop="@drawable/ic_user_property_red"
             android:gravity="center"
             android:text="红包"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
         <TextView
             android:id="@+id/integral"
             android:layout_width="0dp"
@@ -239,7 +248,7 @@
             android:drawableTop="@drawable/ic_user_property_integral"
             android:gravity="center"
             android:text="积分"
-            android:textSize="15sp"/>
+            android:textSize="14sp"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -254,7 +263,7 @@
     <TextView
         android:id="@+id/shipping_address"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:text="收货地址"
         android:textSize="18dp"
         android:gravity="center_vertical"
@@ -271,7 +280,7 @@
     <TextView
         android:id="@+id/system_setup"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:text="系统设置"
         android:textSize="18dp"
         android:gravity="center_vertical"

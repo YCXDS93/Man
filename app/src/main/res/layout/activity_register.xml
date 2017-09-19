@@ -36,7 +36,7 @@
         android:layout_alignLeft="@id/et_phone"
         android:layout_alignStart="@+id/login_close"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="18dp"
         android:layout_marginTop="30dp"
         android:background="@null"
         android:drawableBottom="@drawable/edit_line"
@@ -46,9 +46,45 @@
         android:maxLength="11"
         android:paddingLeft="20dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/grey"
         android:textSize="16sp"
         android:drawableLeft="@drawable/ic_edit_username"/>
+    <LinearLayout
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/abc_cab_background_top_mtrl_alpha"
+        >
+        <EditText
+            android:id="@+id/et_phone_code"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/duanxin"
+            android:drawablePadding="10dp"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="4"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+        <Button
+            android:id="@+id/getyzm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="22dp"
+            android:background="#0000"
+            android:layout_marginTop="5dp"
+            android:text="获取验证码"
+            android:textColor="@color/gray"/>
+ />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/et_password"
@@ -56,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/et_phone"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="18dp"
         android:layout_marginTop="30dp"
         android:background="@null"
         android:drawableBottom="@drawable/edit_line"
@@ -67,7 +103,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/grey"
         android:textSize="16sp"
         android:drawableLeft="@drawable/ic_edit_password"/>
     <EditText
@@ -76,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/et_phone"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="18dp"
         android:layout_marginTop="30dp"
         android:background="@null"
         android:drawableBottom="@drawable/edit_line"
@@ -87,16 +123,17 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/grey"
         android:textSize="16sp"
         android:drawableLeft="@drawable/ic_edit_password"/>
     <EditText
+
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/et_phone"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="18dp"
         android:layout_marginTop="30dp"
         android:background="@null"
         android:drawableBottom="@drawable/edit_line"
@@ -107,7 +144,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/grey"
         android:textSize="16sp"
         android:drawableLeft="@drawable/ic_edit_email"/>
     <Button
