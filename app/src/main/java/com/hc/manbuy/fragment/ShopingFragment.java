@@ -1,5 +1,7 @@
 package com.hc.manbuy.fragment;
 
+import android.view.View;
+
 import com.hc.manbuy.R;
 import com.hc.manbuy.base.BaseFragment;
 
@@ -16,7 +18,7 @@ public class ShopingFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(View view) {
 
     }
 

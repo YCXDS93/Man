@@ -2,12 +2,15 @@ package com.hc.manbuy.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.hc.manbuy.R;
 import com.hc.manbuy.activity.LoginActivity;
 import com.hc.manbuy.base.BaseFragment;
@@ -23,8 +26,12 @@ import butterknife.Unbinder;
  */
 
 public class MeFragment extends BaseFragment implements View.OnClickListener{
-
-
+    @BindView(R.id.log)
+    ImageView mUserImg;//头像
+    @BindView(R.id.userImg)
+    ImageView userImg;//头像
+    @BindView(R.id.username)
+    TextView username;//名字
     @BindView(R.id.goods)
     TextView goods;//商品收藏
     @BindView(R.id.store)
@@ -32,7 +39,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener{
     @BindView(R.id.footprint)
     TextView footprint;//我的足迹
     @BindView(R.id.logon)
-    RelativeLayout logon;//登录
+    LinearLayout logon;//登录
     @BindView(R.id.all_orders)
     TextView allOrders;//全部订单
     @BindView(R.id.obligation)
@@ -62,14 +69,14 @@ public class MeFragment extends BaseFragment implements View.OnClickListener{
     @BindView(R.id.system_setup)
     TextView systemSetup;//系统设置
     Unbinder unbinder;
-
+    private String mPhone;
     @Override
     public int getLayOutId() {
         return R.layout.me_fragment;
     }
     //初始化数据
     @Override
-    protected void initView() {
+    protected void initView(View view) {
         goods.setOnClickListener(this);
         store.setOnClickListener(this);
         footprint.setOnClickListener(this);
@@ -111,13 +118,35 @@ public class MeFragment extends BaseFragment implements View.OnClickListener{
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()){
+    public void onClick(View v) {
+        switch (v.getId()){
             //登录
             case R.id.logon:
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-                getActivity().overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                if (username.length()<10){
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    getActivity().overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                }
+
                 break;
+        }
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        Intent intent = getActivity().getIntent();
+        //传回来的手机号
+        mPhone = intent.getStringExtra("phone");
+        username.setText(mPhone);
+//                传回的头像         默认的一个头像  但也是网络获取的
+        String img = intent.getStringExtra("img");
+        Glide.with(getActivity()).load(img)
+                .into(userImg);
+
+        userImg.setVisibility(View.VISIBLE);
+        if (username.length() < 10) {
+        } else {
+            mUserImg.setVisibility(View.GONE);
         }
     }
 }
